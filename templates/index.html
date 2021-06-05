@@ -1,0 +1,36 @@
+{% extends "hedear.html" %}
+
+{% block content %}
+    <div class="container">
+        <h1>This is a text analyzer</h1><br>
+        <form action="/analyze" method="POST"> {% csrf_token %}
+            <div class="form-floating">
+                <textarea style="height:194px;" name="text" class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+              </div>
+            <!-- <textarea name="text" id="" cols="30" rows="10" style="margin: 0px; width: 838px; height: 151px;"></textarea> -->
+            <br>
+            <!-- <input type="checkbox" name="decapitalize"/> decapitalize<br> -->
+            <div class="form-check form-switch">
+                <input class="form-check-input" name="decapitalize" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault"> Decapitalize</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" name="rmpunc" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault"> Remove Punctuations</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" name="rmspace" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault"> Remove ExtraSpaces</label>
+            </div>
+
+            <div class="form-check form-switch">
+                <input class="form-check-input" name="rmnewline" type="checkbox" id="flexSwitchCheckDefault">
+                <label class="form-check-label" for="flexSwitchCheckDefault"> Remove Newline</label>
+            </div><br>
+            <button type="submit" class="btn btn-dark">Submit</button>
+        </form>
+    </div>
+{% endblock %}
+
